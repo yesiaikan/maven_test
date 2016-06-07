@@ -4,6 +4,7 @@ import junit.extensions.TestSetup;
 import junit.framework.JUnit4TestAdapter;
 import junit.framework.TestSuite;
 import junit.framework.Test;
+import org.junit.runners.Parameterized;
 
 /**
  * Created by muli1 on 16/6/6.
@@ -16,7 +17,7 @@ public class TestManager {
         suite.addTest(new JUnit4TestAdapter(SimpleTest.class));
         suite.addTest(new JUnit4TestAdapter(CalcuateTest.class));
         suite.addTest(new JUnit4TestAdapter(InterfaceTest.class));
-
+        suite.addTest(new JUnit4TestAdapter(ParameterTest.class));
 
         return new ResourceTestSetup(suite);
     }

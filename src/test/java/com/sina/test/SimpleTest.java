@@ -2,7 +2,6 @@ package com.sina.test;
 
 import org.junit.*;
 
-
 /**
  * Created by muli1 on 16/6/6.
  *

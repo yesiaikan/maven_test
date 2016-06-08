@@ -109,6 +109,7 @@
                 <configuration>
                     <formats>
                         <format>xml</format>
+                        <format>html</format>
                     </formats>
                     <instrumentation>
                         <excludes>

@@ -6,8 +6,27 @@
 
     <groupId>com.sina.test</groupId>
     <artifactId>test_method</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+    <packaging>jar</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties/>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties/>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties/>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
@@ -33,8 +52,8 @@
 
     </dependencies>
 
-    <build>
 
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -106,13 +125,38 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
-
-
 
 
     </build>
 
+    <repositories>
+        <repository>
+            <id>weibo.default</id>
+            <name>Internal Release Repository</name>
+            <url>http://redmine.intra.weibo.com:8081/nexus/content/repositories/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>weibo.default</id>
+            <uniqueVersion>true</uniqueVersion>
+            <name>Internal Release Repository</name>
+            <url>http://redmine.intra.weibo.com:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>weibo.default</id>
+            <uniqueVersion>true</uniqueVersion>
+            <name>Internal Snapshot Repository</name>
+            <url>http://redmine.intra.weibo.com:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

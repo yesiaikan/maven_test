@@ -63,6 +63,9 @@
                     <includes>
                         <include>**/com/sina/test/TestManager.java</include>
                     </includes>
+                    <excludes>
+                        <!--<exclude>**/SimpleTest.java</exclude>-->
+                    </excludes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
